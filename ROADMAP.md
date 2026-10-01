@@ -33,6 +33,7 @@ machine at Session 0. Until Tim supplies it, no feature scope is invented here.
 1. **Playbook location.** Provide
    `~/Desktop/Drips/_reference/playbooks/STELLAR-BUILD-PLAYBOOK-v3.md` (or the
    correct path) so section 8 can scope v0.
+2. **Second reviewer.** Name the second human reviewer required before any funded test.
 
 ## Explicitly out of scope
 

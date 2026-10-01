@@ -12,6 +12,7 @@ ajo is a Stellar/Soroban project in three repositories:
 | `ajo-app` | web app (Vite + React + TypeScript) | scaffold only |
 | `ajo-docs` | mdBook documentation | scaffold only |
 
+**This is a custody project:** it holds funds on behalf of others. It is not independently reviewed; **do not use it with real funds.**
 
 ## What is here now
 
