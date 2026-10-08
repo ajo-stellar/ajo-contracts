@@ -3,15 +3,19 @@
 What is next for `ajo-contracts`, in order. Anything not listed as done is
 **not implemented**.
 
+## Local v0 implementation
+
+Contract, app and book source now exist. Local validation evidence lives in TESTING.md. Deployment and funded tests remain blocked pending the second human review. Historical unchecked next-items below are reviewed against the actual source; they are not evidence of deployment.
+
 ## Status
 
 - [x] Repository governance: AGENTS.md, CONTRIBUTING.md, ROADMAP.md, LICENSE,
       .gitignore, .gitattributes (2026-10-01).
-- [ ] v0 contract from the project's playbook section.
+- [x] v0 contract from the project's playbook section.
 
 ## Next
 
-- [ ] v0 contract from `STELLAR-BUILD-PLAYBOOK-v3.md` section 8
+- [x] v0 contract from `STELLAR-BUILD-PLAYBOOK-v3.md` section 8
       (present in `~/Desktop/Drips/_reference/playbooks/`, confirmed
       2026-10-02). v0 scope from that section, deliberately small: members
       contribute a fixed token amount each round; one member receives the
@@ -27,9 +31,9 @@ What is next for `ajo-contracts`, in order. Anything not listed as done is
       test per variant; `test.rs` lifecycle tests; `ERRORS.md` +
       `scripts/check-errors.mjs` and its tests; rust-toolchain pinned to
       `wasm32v1-none`; release profile with `overflow-checks = true`.
-- [ ] Day 11 hardening: same shape as duestreasury Day 9 (invariant tests,
+- [x] Day 11 hardening: same shape as duestreasury Day 9 (invariant tests,
       review checklist, SECURITY.md, TESTING.md, DEPLOYMENT_CHECKLIST.md).
-- [ ] CI (`contract.yml`): fmt, clippy -D warnings, cargo test, node --test
+- [x] CI (`contract.yml`): fmt, clippy -D warnings, cargo test, node --test
       scripts/, check-errors, `stellar contract build` (CLI v28.1.0). Lands
       with the first code that can pass it.
 

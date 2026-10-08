@@ -1,36 +1,23 @@
-# ajo — rotating savings groups on Stellar testnet
+# Ajo — rotating savings circles on Stellar testnet
 
-Status: **scaffold only.** No contract, no app, no book has been written yet.
-Testnet only, no real money, **no pilot has happened**, and this project has
-never run against a deployed contract. Do not use it with real funds.
+Status: local v0 prototype implemented; validation results are recorded in TESTING.md. No deployment, real-wallet end-to-end run or pilot has happened. Testnet only, no real money.
 
-ajo is a Stellar/Soroban project in three repositories:
+**Unreviewed custody code. A second human review is required before any funded test.** One missing contribution can lock a pot indefinitely. No cancellation or refund exists.
 
-| Repo | Purpose | Status |
-|---|---|---|
-| `ajo-contracts` | Soroban contract (Rust) | scaffold only |
-| `ajo-app` | web app (Vite + React + TypeScript) | scaffold only |
-| `ajo-docs` | mdBook documentation | scaffold only |
+## Implementation
 
-**This is a custody project:** it holds funds on behalf of others. It is not independently reviewed; **do not use it with real funds.**
+- Contracts: create fixed circles of 2–20 unique members, one contribution per member per round, permissionless all-paid settlement, fixed payout order, bounded accounting and TTL renewal.
+- App: create/load circles, view current contributions, contribute/settle, testnet wallet network checks, transaction hash and explorer receipt. Public addresses only; no personal data.
+- Book: architecture, privacy, limits, threat model, synthetic worked example, pilot gate and verification checklist.
 
-## What is here now
+See [ROADMAP.md](ROADMAP.md), [SECURITY.md](SECURITY.md), [TESTING.md](TESTING.md) and [DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md).
 
-Repository governance only, adapted from the completed `schoolfees` project:
-[AGENTS.md](AGENTS.md) (the rulebook for agents and humans),
-[CONTRIBUTING.md](CONTRIBUTING.md), [ROADMAP.md](ROADMAP.md) (what v0 will be,
-from the project's playbook section), MIT [LICENSE](LICENSE), `.gitignore`,
-`.gitattributes` (LF everywhere). No code yet; the first CI workflow lands
-with the first code that can pass it.
+## Run locally
 
-## What v0 will be
+Run each command from its corresponding repository.
 
-See [ROADMAP.md](ROADMAP.md). The scope is defined in the project's section of
-the build playbook; it is not invented here.
+Contracts: cargo test --offline --locked; node --test scripts/; node scripts/check-errors.mjs.
 
-## Honest limitations
+App: npm ci; copy .env.example to .env.local and configure reviewed deployment values only after the custody gate; npm run dev. With missing config the interface remains visible but actions are disabled. Contributions use token base units, not assumed decimals.
 
-- Nothing is implemented, tested, audited or deployed.
-- The contract has never been compiled; the app has never run; the book has
-  never been built.
-- No pilot has happened and none is claimed anywhere in these repositories.
+Docs: node --test scripts/; node scripts/check-links.mjs; mdbook build.
