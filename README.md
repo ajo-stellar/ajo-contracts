@@ -1,3 +1,9 @@
+<!-- project-brand -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="brand/logo-dark.svg">
+  <img src="brand/logo.svg" alt="Ajo" height="72">
+</picture>
+
 # Ajo — rotating savings circles on Stellar testnet
 
 Status: local v0 prototype implemented; validation results are recorded in TESTING.md. No deployment, real-wallet end-to-end run or pilot has happened. Testnet only, no real money.
